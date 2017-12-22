@@ -1,10 +1,21 @@
-### 静态与动态
+<!-- MarkdownTOC -->
+
+- 静态与动态
+    - 静态类型和动态类型
+    - 静态类型的优缺点
+    - 动态类型的优缺点
+    - Duck Typing与 typescript
+
+<!-- /MarkdownTOC -->
+
+
+#  静态与动态
 
 > 静态是指程序执行之前，从代码就可以知道一切，程序静态的部分包括变量，方法的名称，类型以及控制程序的结构等等
 
 > 相对于静态，动态是指在程序执行之前有些地方是不知道的，程序动态的部分包括变量的值，执行时间和使用的内存等等
 
-#### 静态类型和动态类型
+###  静态类型和动态类型
 编程语言中的类型是指数据的种类，例如int，string。 在程序中，可以指定变量的数据类型，这个就是静态数据类型的开始，这种对数据类型的定义称为类型的定义，
 如果在程序中，将string类型赋值给int类型的变量，那么根据程序的定义，编译器知道赋值语句中的值的类型，所以可以检查这种类型的不匹配的错误，静态类型不用执行程序就可以检测到错误。
 
@@ -21,13 +32,13 @@ C++, 所有数据类型都是静态类型，包括对象。
 对象保存有关自己种类的信息，某一个变量可以用各种类型的数据来赋值，这两点是多态这个面向对象的必要条件，因为如果变量类型和赋值数据的类型必须是完全一致的静态类型的话，成为执行时，就不可嗯根据数据类型的
 不来自动选择合适的处理方法。
 
-##### 静态类型的优缺点
+###  静态类型的优缺点
 静态类型最大的优点是在编译时发现类型不匹配的错误。明确了数据类型，编译时可以对程序进行优化，提高程序的执行速度。还可以在阅读代码时，知道这个类型的信息。  而动态类型的编程语言至多能发现程序的语法错误。
 
 
 缺点，若不是指定类型就写不出程序，数据类型的定义太繁琐，容易膨胀。另一个问题是，灵活性的问题，静态类型本身限制了给某个变量只能赋值某种类型的对象。这种限制很可能妨碍将来的变化，在多重继承，和接口会比较困难。
 
-##### 动态类型的优缺点
+###  动态类型的优缺点
 动态类型编程语言最大优点就是源代码变得很简洁。我们在编写程序的时候，可以不考虑数据类型这种无关本质的部分。提高生产力。
 由于简洁，动态类型编程语言可能会更好理解。
 由于动态类型程序执行时，要做类型检查，静态类型的编程语言通过吧程序源代码转换为可以执行的形式，而动态类型的编程语言，边解释源代码（转换为内部形式），边执行。会比较影响速度。随着计算机性能的提高，执行速度不是什么严重的问题。
@@ -45,10 +56,16 @@ C++, 所有数据类型都是静态类型，包括对象。
 
 
 
-#### Duck Typing与 typescript
+###  Duck Typing与 typescript
 
 在 TypeScript官方文档上有这样一句话
 > One of TypeScript's core principles is that type-checking focuses on the shape that values have. this is sometimes called "duck typing" or "structural subtyping". In Typescript, interfaces fill the role of naming these types, and are a powerful way of defining constracts within your code as well as constracts with code outside for your project.
 
 即TypeScript，可以灵活地使用鸭子类型进行编程，因为TypeScript的本质上是JavaScritpt，动态编程的语言，即使添加class，interface的定义，但本质上还是基于prototype chain去实现class的面向编程。
 
+typescript中，类型兼容性的那一章，有讲明类型兼容性是基于结构子类型，也即是ducktyping
+
+es6结合typescript官方文档，还有JavaScript文档可以更加清楚
+
+structural subtyping typescript
+nomianally-typed C# or Java
